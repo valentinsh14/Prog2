@@ -2,6 +2,13 @@
 
 using System.Diagnostics; // Required for Stopwatch
 
+// --- Aufgabe 2 ---
+Console.WriteLine("\n--- Aufgabe 2: Distribution Counting (Positive Numbers) ---");
+int[] positiveNumbers = { 5, 2, 9, 5, 2, 8, 1, 9, 3, 5 };
+Console.WriteLine("Original Array: " + string.Join(", ", positiveNumbers));
+int[] sortedPositive = DistributionCounting(positiveNumbers);
+Console.WriteLine("Sorted Array:   " + string.Join(", ", sortedPositive));
+
 // --- Aufgabe 1 ---
 Console.WriteLine("--- Aufgabe 1: Sorting Algorithms ---");
 
@@ -135,24 +142,48 @@ int[] DistributionCounting(int[] arr)
     {
         return new int[0];
     }
-
+    
     // Step 1: Find the maximum value
-    int maxVal = 0;
-    // TODO: Write a loop to find the maximum value in 'arr' and store it in maxVal.
-    // Tip: You can find it with a simple for or foreach loop.
+    int maxVal = 0; // 1. Start by assuming 0 is the max (safe because numbers are positive)
 
-    // Step 2: Create the count array
-    // TODO: Create an integer array called 'count' with a size of 'maxVal + 1'.
+// 2. Loop through every single 'number' in the 'arr' array
+    foreach (int number in arr) 
+    {
+        // 3. Check if the current number is greater than the max we've found so far
+        if (number > maxVal)
+        {
+            // 4. If it is, we have a new maximum! Update maxVal.
+            maxVal = number; 
+        }
+    }
 
-    // Step 3: Count occurrences
-    // TODO: Loop through the input 'arr'. For each element, increment the correct index in the 'count' array.
+    int[] count = new int[maxVal + 1];
+    foreach (int number in arr)
+    {
+        // For each 'number' from the input array, we use it as an index
+        // into our 'count' array and increment the value.
+        // This is the "counting" part.
+        count[number]++;
+    }
 
     // Step 4: Rebuild the sorted array
     int[] sortedArr = new int[arr.Length];
-    int currentPosition = 0;
-    // TODO: Loop through the 'count' array from 0 to maxVal.
-    // Inside, have a nested loop that runs 'count[i]' times.
-    // In the nested loop, add the number 'i' to 'sortedArr' at 'currentPosition' and increment 'currentPosition'.
+    int currentPosition = 0; // This is our "cursor" for the sortedArr
+
+// Loop through the 'count' array. The index 'i' represents the number to place.
+    for (int i = 0; i < count.Length; i++)
+    {
+        // 'count[i]' tells us how many times the number 'i' appeared.
+        // We loop that many times.
+        for (int j = 0; j < count[i]; j++)
+        {
+            // Place the number 'i' into the sorted array
+            sortedArr[currentPosition] = i;
+
+            // And move our cursor to the next empty spot
+            currentPosition++;
+        }
+    }
 
     return sortedArr;
 }

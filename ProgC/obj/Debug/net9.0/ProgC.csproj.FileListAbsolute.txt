@@ -12,3 +12,4 @@
 /home/vale/RiderProjects/ProgC/ProgC/obj/Debug/net9.0/ProgC.pdb
 /home/vale/RiderProjects/ProgC/ProgC/obj/Debug/net9.0/ProgC.genruntimeconfig.cache
 /home/vale/RiderProjects/ProgC/ProgC/obj/Debug/net9.0/ref/ProgC.dll
+/home/vale/RiderProjects/ProgC/ProgC/obj/Debug/net9.0/ProgC.sourcelink.json
