@@ -1,0 +1,14 @@
+/home/vale/RiderProjects/ProgC/ProgC/bin/Debug/net9.0/ProgC
+/home/vale/RiderProjects/ProgC/ProgC/bin/Debug/net9.0/ProgC.deps.json
+/home/vale/RiderProjects/ProgC/ProgC/bin/Debug/net9.0/ProgC.runtimeconfig.json
+/home/vale/RiderProjects/ProgC/ProgC/bin/Debug/net9.0/ProgC.dll
+/home/vale/RiderProjects/ProgC/ProgC/bin/Debug/net9.0/ProgC.pdb
+/home/vale/RiderProjects/ProgC/ProgC/obj/Debug/net9.0/ProgC.GeneratedMSBuildEditorConfig.editorconfig
+/home/vale/RiderProjects/ProgC/ProgC/obj/Debug/net9.0/ProgC.AssemblyInfoInputs.cache
+/home/vale/RiderProjects/ProgC/ProgC/obj/Debug/net9.0/ProgC.AssemblyInfo.cs
+/home/vale/RiderProjects/ProgC/ProgC/obj/Debug/net9.0/ProgC.csproj.CoreCompileInputs.cache
+/home/vale/RiderProjects/ProgC/ProgC/obj/Debug/net9.0/ProgC.dll
+/home/vale/RiderProjects/ProgC/ProgC/obj/Debug/net9.0/refint/ProgC.dll
+/home/vale/RiderProjects/ProgC/ProgC/obj/Debug/net9.0/ProgC.pdb
+/home/vale/RiderProjects/ProgC/ProgC/obj/Debug/net9.0/ProgC.genruntimeconfig.cache
+/home/vale/RiderProjects/ProgC/ProgC/obj/Debug/net9.0/ref/ProgC.dll
