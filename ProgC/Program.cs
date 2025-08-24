@@ -2,6 +2,13 @@
 
 using System.Diagnostics; // Required for Stopwatch
 
+// --- Aufgabe 3 ---
+Console.WriteLine("\n--- Aufgabe 3: Distribution Counting (With Negatives) ---");
+int[] mixedNumbers = { 5, -2, 9, 5, 0, -5, 2, -2, 8, 1, 9, 3, 5, -5 };
+Console.WriteLine("Original Array: " + string.Join(", ", mixedNumbers));
+int[] sortedMixed = DistributionCountingWithNegatives(mixedNumbers);
+Console.WriteLine("Sorted Array:   " + string.Join(", ", sortedMixed));
+
 // --- Aufgabe 2 ---
 Console.WriteLine("\n--- Aufgabe 2: Distribution Counting (Positive Numbers) ---");
 int[] positiveNumbers = { 5, 2, 9, 5, 2, 8, 1, 9, 3, 5 };
@@ -190,6 +197,61 @@ int[] DistributionCounting(int[] arr)
 
 int[] DistributionCountingWithNegatives(int[] arr)
 {
-    // TODO: Implement Distribution Counting for positive and negative numbers
-    return arr;
+    if (arr == null || arr.Length == 0)
+    {
+        return new int[0];
+    }
+
+    // Step 1: Find min and max values
+    // Tip: Initialize both to the first element of the array.
+    int minVal = arr[0]; 
+    int maxVal = arr[0];
+    
+    for(int i = 1; i < arr.Length; i++) 
+    {
+        int number = arr[i];
+        // 3. Check if the current number is greater than the max we've found so far
+        if (number > maxVal)
+        {
+            maxVal = number; 
+        }
+        if (number < minVal)
+        {
+            minVal = number; 
+        }
+    }
+
+    // Step 2 & 3: Create the count array based on the range
+    int range = maxVal - minVal + 1;
+    int[] count = new int[range];
+
+    foreach (int number in arr)
+    {
+        int shiftedIndex = number - minVal; 
+    
+        // Increment the counter at that shifted position
+        count[shiftedIndex]++;
+    }
+
+    // Step 5: Rebuild the sorted array, un-shifting the values
+    int[] sortedArr = new int[arr.Length];
+    int currentPosition = 0;
+    // Loop through the 'count' array. 'i' is the SHIFTED value's index.
+    for (int i = 0; i < range; i++) // or count.Length
+    {
+        // The inner loop runs 'count[i]' times, as before
+        for (int j = 0; j < count[i]; j++)
+        {
+            // Calculate the ORIGINAL value by adding minVal back
+            int originalValue = i + minVal;
+
+            // Place the original value into the sorted array at the current position
+            sortedArr[currentPosition] = originalValue;
+        
+            // And increment the position for the next number
+            currentPosition++;
+        }
+    }
+
+    return sortedArr;
 }
